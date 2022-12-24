@@ -12,9 +12,9 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       # install node and checkout code
-      - npm uninstall node
-      - node/uninstall
-        # node-version: '14.15'
+      # - npm uninstall node
+      # - node/install
+      # node-version: '14.15'
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
