@@ -13,7 +13,9 @@ jobs:
     steps:
       # install node and checkout code
       - node/install:
-          node-version: '16.13'
+          node-version:
+            default: ''
+
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
@@ -54,7 +56,9 @@ jobs:
       # more setup needed for aws, node, elastic beanstalk
     steps:
       - node/install:
-          node-version: 'latest'
+          node-version:
+            default: ''
+
       - eb/setup
       - aws-cli/setup
       - checkout
