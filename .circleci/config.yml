@@ -12,12 +12,9 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       # install node and checkout code
-      - checkout
       - node/install:
           node-version: '16.13'
-          install-yarn: true # Test the install of YARN
-          yarn-version: '1.22.5'
-
+      - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
           name: Install Front-End Dependencies
@@ -38,7 +35,7 @@ jobs:
           name: Front-End Lint
           command: |
             echo "TODO: Lint the frontend"
-            npm run frontend:lint
+            npm run frontend:build
       # TODO: Build the frontend app
       - run:
           name: Front-End Build
@@ -50,18 +47,14 @@ jobs:
           name: API Build
           command: |
             echo "TODO: Build the backend API"
-            npm run api:build
   # deploy step will run only after manual approval
   deploy:
     docker:
       - image: 'cimg/base:stable'
       # more setup needed for aws, node, elastic beanstalk
     steps:
-      - checkout
       - node/install:
-          node-version: '16.13'
-          install-yarn: true # Test the install of YARN
-          yarn-version: '1.22.5'
+          node-version: 'lastest'
       - eb/setup
       - aws-cli/setup
       - checkout
@@ -70,12 +63,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-            npm run frontend:install
-            npm run api:install
-            npm run frontend:build
-            npm run api:build
             npm run frontend:deploy
-            npm run api:deploy
             eb use Baherproject-env
             eb deploy
             eb status
