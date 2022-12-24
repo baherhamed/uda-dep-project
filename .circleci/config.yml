@@ -12,7 +12,7 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       # install node and checkout code
-      - uninstall node
+      - npm uninstall node
       - node/uninstall
         # node-version: '14.15'
       - checkout
