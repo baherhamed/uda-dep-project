@@ -70,7 +70,12 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
+            npm run frontend:install
+            npm run api:install
+            npm run frontend:build
+            npm run api:build
             npm run frontend:deploy
+            npm run api:deploy
             eb use Baherproject-env
             eb deploy
             eb status
