@@ -64,7 +64,7 @@ jobs:
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             npm run frontend:deploy
-            eb use Newapp-env-2
+            eb use Baherproject-env
             eb deploy
             eb status
 
