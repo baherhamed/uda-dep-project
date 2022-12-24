@@ -54,7 +54,7 @@ jobs:
       # more setup needed for aws, node, elastic beanstalk
     steps:
       - node/install:
-          node-version: 'lastest'
+          node-version: 'latest'
       - eb/setup
       - aws-cli/setup
       - checkout
