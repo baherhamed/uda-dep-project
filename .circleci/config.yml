@@ -12,9 +12,12 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       # install node and checkout code
-      - node/install
-          # node-version: '16.13'
       - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
+
       # Use root level package.json to install dependencies in the frontend app
       - run:
           name: Install Front-End Dependencies
@@ -53,8 +56,12 @@ jobs:
       - image: 'cimg/base:stable'
       # more setup needed for aws, node, elastic beanstalk
     steps:
-      - node/install
-          # node-version: '16.13'
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
+
       - eb/setup
       - aws-cli/setup
       - checkout
