@@ -65,9 +65,7 @@ jobs:
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             npm run frontend:deploy
-            eb use Baherproject-env
-            eb deploy
-            eb status
+            npm run api:deploy
 
 workflows:
   udagram:
