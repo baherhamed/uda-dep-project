@@ -4,7 +4,7 @@ branch-defaults:
   master:
     environment: Baherproject-env
 deploy:
-  artifact: ../archive.zip
+  artifact: www/archive.zip
 environment-defaults:
   Baherproject-env:
     branch: null
