@@ -67,6 +67,6 @@ The e2e tests are using Protractor and Jasmine.
 
 # Links
 
-- backend : http://newapp-env-2.eba-d3w3pv9q.us-east-1.elasticbeanstalk.com
-- frontend : http://baher-project.s3-website-us-east-1.amazonaws.com
+- backend : http://baherproject-env.eba-nppdiih3.us-east-1.elasticbeanstalk.com/
+- frontend : http://baher-project-3.s3-website-us-east-1.amazonaws.com/
 - images for db and es and es exisit in github repository in folder called screen shots
