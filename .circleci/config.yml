@@ -12,7 +12,6 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       # install node and checkout code
-      - npm uninstall nodejs
       - npm cache clean --force
       - node/install
       - checkout
