@@ -7,7 +7,7 @@ deploy:
   artifact: www/archive.zip
 environment-defaults:
   Baherproject-env:
-    branch: null
+    branch: main
     repository: null
 global:
   application_name: baher-project
