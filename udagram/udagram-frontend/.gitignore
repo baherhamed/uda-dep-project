@@ -37,6 +37,6 @@ node_modules
 *.zip
 echo'../set_env.sh'>>.gitignore
 # Elastic Beanstalk Files
-.elasticbeanstalk/*
+# .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
