@@ -11,13 +11,10 @@ jobs:
       # the base image can run most needed actions with orbs
       - image: 'cimg/base:stable'
     steps:
-      - run:
-          name: Install Front-End Dependencies
-          command: |
-            npm uninstall nodejs
-            npm cache clean --force
       # install node and checkout code
-      - node/install
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
