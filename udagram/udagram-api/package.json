@@ -11,7 +11,7 @@
     "clean": "rm -rf www/ || true",
     "deploy": "chmod +x bin/deploy.sh && sh bin/deploy.sh",
     "deploy:test": "eb use Baherproject-env && eb deploy",
-    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config &&  cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r archive.zip * && cd .. ",
+    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config &&  cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && ls && cd www && zip -r archive.zip * && cd .. ",
     "test": "echo Testing was successful"
   },
   "keywords": [],
@@ -50,9 +50,5 @@
     "mocha": "^6.1.4",
     "ts-node-dev": "^1.1.8",
     "typescript": "^3.5.3"
-  },
-  "engines": {
-    "npm": ">=8.0.0 <9.0.0",
-    "node": ">=16.0.0 <17.0.0"
   }
 }
