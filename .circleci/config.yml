@@ -12,6 +12,8 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       # install node and checkout code
+      - npm uninstall node
+      - npm cache clean --force
       - node/install
       - checkout
       # Use root level package.json to install dependencies in the frontend app
