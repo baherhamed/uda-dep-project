@@ -3,8 +3,6 @@ branch-defaults:
     environment: Baherproject-env
   master:
     environment: Baherproject-env
-# deploy:
-#   artifact: www/archive.zip
 environment-defaults:
   Baherproject-env:
     branch: null
