@@ -36,7 +36,7 @@ jobs:
           name: Front-End Lint
           command: |
             echo "TODO: Lint the frontend"
-            npm run frontend:build
+            npm run frontend:lint
       # TODO: Build the frontend app
       - run:
           name: Front-End Build
@@ -48,13 +48,16 @@ jobs:
           name: API Build
           command: |
             echo "TODO: Build the backend API"
+            npm run api:build
   # deploy step will run only after manual approval
   deploy:
     docker:
       - image: 'cimg/base:stable'
       # more setup needed for aws, node, elastic beanstalk
     steps:
-      - node/install
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
       - eb/setup
       - aws-cli/setup
       - checkout
